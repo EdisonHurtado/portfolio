@@ -3,41 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio</title>
+  <title>Portafolio - Edison Hurtado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+    /* -------- RESET -------- */
+    * {
       margin: 0;
-      padding: 2rem;
-      background-color: #f4f4f4;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #f8faff, #e9f5ff);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #0077cc, #00aaff);
+      color: #fff;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
     h1 {
-      font-size: 2.5rem;
-      color: #333;
+      font-size: 2.7rem;
+      margin-bottom: .5rem;
     }
-    nav {
-      margin-top: 2rem;
+    header p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
     }
-    nav a {
+    h2 {
+      margin: 2rem 0 1.2rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: #0077cc;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Habilidades --- */
+    .skill {
+      margin: 1rem 0;
+    }
+    .skill span {
+      font-weight: bold;
+      display: block;
+      margin-bottom: .3rem;
+    }
+    .bar {
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 14px;
+    }
+    .bar div {
+      height: 100%;
+      background: linear-gradient(90deg, #0077cc, #00aaff);
+      width: 0;
+      border-radius: 20px;
+      transition: width 2s ease;
+    }
+
+    /* --- Proyectos --- */
+    .projects a {
       display: inline-block;
-      margin: 1rem;
+      margin: .5rem;
+      padding: .7rem 1rem;
+      text-decoration: none;
+      color: #fff;
+      background: #0077cc;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .projects a:hover {
+      background: #005999;
+      transform: translateY(-3px);
+    }
+
+    /* --- Contacto --- */
+    .contact-info {
+      text-align: center;
+    }
+    .contact-info p {
+      margin: .5rem 0;
+    }
+    .social {
+      margin-top: 1rem;
+    }
+    .social a {
+      margin: 0 12px;
       text-decoration: none;
       color: #0077cc;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: #005999;
+    .social a:hover {
+      color: #ff8800;
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #0077cc;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>Portafolio</h1>
-  <nav>
-    <a href="enlace1.html">Edison Hurtado</a>
-    <a href="enlace2.html">Daniel Arenas</a>
-    <a href="enlace3.html">Juan Dulcey</a>
-  </nav>
+  <header>
+    <img src="fotoportafolio.jpg" alt="Foto personal">
+    <h1>Portafolio</h1>
+    <p>
+      Soy <b>Edison Hurtado</b>, ingeniero de sistemas en formación apasionado por la 
+      tecnología, con un enfoque en <b>DevOps</b> y <b>Cloud Computing</b>. 
+      Mi objetivo es diseñar soluciones escalables, confiables y seguras que 
+      generen impacto real. Disfruto aprender nuevas herramientas, trabajar en 
+      equipo y crear proyectos que integren buenas prácticas de desarrollo 
+      y despliegue continuo.
+    </p>
+  </header>
+
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="skill">
+      <span>Java</span>
+      <div class="bar"><div style="width: 85%"></div></div>
+    </div>
+    <div class="skill">
+      <span>Spring Boot</span>
+      <div class="bar"><div style="width: 85%"></div></div>
+    </div>
+    <div class="skill">
+      <span>GitHub</span>
+      <div class="bar"><div style="width: 90%"></div></div>
+    </div>
+    <div class="skill">
+      <span>Docker</span>
+      <div class="bar"><div style="width: 20%"></div></div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="projects">
+    <h2>Proyectos</h2>
+    <a href="https://github.com/EdisonHurtado/probability-of-rolling-a-die.git">🎲 Lanzamiento de Dados</a>
+    <a href="https://github.com/EdisonHurtado/task_manager.git">📋 Gestor de Tareas</a>
+    <a href="https://github.com/EdisonHurtado/multi-specialist-platform.git">🛒 Agendamiento de Citas</a>
+    <a href="#">📚 Biblioteca Virtual</a>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:maestrosantiago14@gmail.com">maestrosantiago14@gmail.com</a></p>
+      <p><i class="fas fa-phone"></i> +57 315 502 1446</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/ESHC8829"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/EdisonHurtado"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/santiagoe.campos/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.reddit.com/user/Aggressive_Ad_7004/"><i class="fab fa-reddit"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - Edison Hurtado</p>
+  </footer>
+
+  <script>
+    // Animación al hacer scroll
+    const sections = document.querySelectorAll("section");
+    const bars = document.querySelectorAll(".bar div");
+
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          sec.classList.add("show");
+        }
+      });
+      // animar barras
+      bars.forEach(bar => {
+        const barTop = bar.getBoundingClientRect().top;
+        if (barTop < triggerBottom) {
+          bar.style.width = bar.getAttribute("style").match(/width:\s*([0-9]+%)/)[1];
+        }
+      });
+    };
+
+    window.addEventListener("scroll", showOnScroll);
+    window.addEventListener("load", showOnScroll);
+  </script>
 </body>
 </html>
